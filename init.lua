@@ -441,6 +441,23 @@ require('lazy').setup({
           -- Useful when you're not sure what type a variable is and you want to see
           -- the definition of its *type*, not where it was *defined*.
           vim.keymap.set('n', 'grt', builtin.lsp_type_definitions, { buffer = buf, desc = '[G]oto [T]ype Definition' })
+
+          local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+          if client ~= nil and client.name == 'gopls' then
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = buf,
+              callback = function()
+                vim.lsp.buf.code_action {
+                  context = {
+                    only = { 'source.organizeImports' },
+                    diagnostics = {},
+                  },
+                  apply = true,
+                }
+              end,
+            })
+          end
         end,
       })
 
