@@ -644,6 +644,7 @@ require('lazy').setup({
             },
           },
         },
+        terraformls = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
@@ -664,6 +665,7 @@ require('lazy').setup({
         'lua-language-server', -- Lua Language server
         'stylua', -- Used to format Lua code
         'rust-analyzer', -- Rust Language server
+        'terraform-ls', -- Terraform Language server
         -- You can add other tools here that you want Mason to install
       }
 
@@ -734,6 +736,9 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        terraform = { 'terraform_fmt' },
+        tf = { 'terraform_fmt' },
+        ['terraform-vars'] = { 'terraform_fmt' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
