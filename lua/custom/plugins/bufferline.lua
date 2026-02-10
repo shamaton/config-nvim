@@ -58,6 +58,8 @@ return {
     -- Keymaps for buffer navigation
     vim.keymap.set('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', { desc = 'Next buffer', silent = true })
     vim.keymap.set('n', '<S-Tab>', '<cmd>BufferLineCyclePrev<cr>', { desc = 'Previous buffer', silent = true })
+    vim.keymap.set('n', '<leader>bH', '<cmd>BufferLineMovePrev<cr>', { desc = '[B]uffer Move Left', silent = true })
+    vim.keymap.set('n', '<leader>bL', '<cmd>BufferLineMoveNext<cr>', { desc = '[B]uffer Move Right', silent = true })
     vim.keymap.set('n', '<leader>bp', '<cmd>BufferLineTogglePin<cr>', { desc = '[B]uffer [P]in', silent = true })
     vim.keymap.set('n', '<leader>bP', '<cmd>BufferLineGroupClose ungrouped<cr>', { desc = '[B]uffer Delete Non-[P]inned', silent = true })
     vim.keymap.set('n', '<leader>bo', '<cmd>BufferLineCloseOthers<cr>', { desc = '[B]uffer Close [O]thers', silent = true })
