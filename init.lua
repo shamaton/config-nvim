@@ -644,7 +644,15 @@ require('lazy').setup({
             },
           },
         },
-        terraformls = {},
+        terraformls = {
+          settings = {
+            ['terraform-ls'] = {
+              experimentalFeatures = {
+                prefillRequiredFields = true,
+              },
+            },
+          },
+        },
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
