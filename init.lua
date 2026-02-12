@@ -830,7 +830,15 @@ require('lazy').setup({
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets' },
+        default = { 'copilot', 'lsp', 'path', 'snippets' },
+        providers = {
+          copilot = {
+            name = 'copilot',
+            module = 'blink-copilot',
+            score_offset = 100, -- 優先度を高く設定
+            async = true,
+          },
+        },
       },
 
       snippets = { preset = 'luasnip' },
