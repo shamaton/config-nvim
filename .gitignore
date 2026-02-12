@@ -7,3 +7,4 @@ spell/
 
 .DS_Store
 lua/config/local.lua
+.envrc.local
