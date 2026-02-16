@@ -388,7 +388,7 @@ require('lazy').setup({
         -- },
         -- pickers = {}
         defaults = {
-          file_ignore_patterns = { '/.git/', '.cache/' },
+          file_ignore_patterns = { '/.git/', '.git/', '.cache/' },
         },
         pickers = {
           find_files = {
